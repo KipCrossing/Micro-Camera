@@ -12,7 +12,11 @@ Once the firmware is downloaded, you need to install the **esptool**:
 pip install esptool
 ```
 
+Connect you USB to TTL UART Serial Converter to the ESP32-CAM board and put it in bootloader mode by connecting the IO0 pin to ground (shown in green).
+
 ![alt text](images/ESPflash.png)
+
+_press RST botton_
 
 Then, erase the flash one the ESP32:
 
@@ -21,6 +25,8 @@ esptool.py --port /dev/ttyUSB0 erase_flash
 ```
 
 cd into the directory that you put the firmware in and:
+
+_press RST botton_
 
 ```shell
 esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ESP32CAM_firmware.bin
