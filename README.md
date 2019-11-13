@@ -14,7 +14,7 @@ Once the firmware is downloaded, you need to install the **esptool**:
 pip install esptool
 ```
 
-Connect you USB to TTL UART Serial Converter to the ESP32-CAM board and put it in bootloader mode by connecting the IO0 pin to ground (shown in green).
+Connect your USB to TTL UART Serial Converter to the ESP32-CAM board and put it in bootloader mode by connecting the IO0 pin to ground (shown in green).
 
 ![alt text](images/ESPflash.png)
 
@@ -35,3 +35,32 @@ esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 
 ```
 
 Now you have microython on the ESP32-CAM board!
+
+Disconnect the IO0 pin from ground then _press RST button_
+
+## Put the micropython code on the ESP32-CAM board
+
+Install ampy
+
+```shell
+pip install adafruit-ampy
+```
+
+Clone Micro-Camera code:
+
+```shell
+git clone https://github.com/KipCrossing/Micro-Camera
+```
+
+Go into the Micro-camera directory:
+
+```shell
+cd Micro-Camera
+```
+
+And put the code on the board
+
+```shell
+ampy --port /dev/ttyUSB0 put boot.py
+ampy --port /dev/ttyUSB0 put main.py
+```
