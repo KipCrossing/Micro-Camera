@@ -64,3 +64,7 @@ And put the code on the board
 ampy --port /dev/ttyUSB0 put boot.py
 ampy --port /dev/ttyUSB0 put main.py
 ```
+
+Insert an SD card, press RST button and see the camera flash and take a photo.
+
+_To be continued..._
