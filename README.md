@@ -82,13 +82,8 @@ camera.speffect(3) # between 0 and  7
 camera.whitebalance(2) # between 0 and 5
 camera.agcgain(0) # between 0 and 30
 camera.aelavels(0) # between -3 and 3
-camera.aecvalue(100) # between 0 1200
+camera.aecvalue(100) # between 0 and 1200
 camera.pixformat(0) # 0 for JPEG, 1 for YUV422 and 2 for RGB
-
-fmt (0:JPEG, 1:YUV422, 2:RGB) - pixformat
-agc (0 to 30) - agcgain
-ael (-2 t0 +2) - aelavels
-aev (0 to 1200) - aecvalue
 
 # take Photo
 camera.init()
