@@ -67,4 +67,49 @@ ampy --port /dev/ttyUSB0 put main.py
 
 Insert an SD card, press RST button and see the camera flash and take a photo.
 
-_To be continued..._
+## Camera module
+
+```python
+import camera
+
+# Setup camera perams
+camera.framesize(12) # between 0 and 13
+camera.quality(63) # between 9 and 64
+camera.contrast(0) # between -3 and 3
+camera.saturation(0) # between -3 and 3
+camera.brightness(0) # between -3 and 3
+camera.speffect(3) # between 0 and  7
+camera.whitebalance(2) # between 0 and 5
+
+# take Photo
+camera.init()
+buf = camera.capture()
+camera.deinit()
+```
+
+## Flash LED
+
+The flash led is controlled by pin 4
+
+```python
+import machine
+import time
+
+led = machine.Pin(4, machine.Pin.OUT)
+led.on()
+time.sleep(0.2)
+led.off()
+```
+
+## mounting the SD card
+
+```python
+import uos
+import machine
+
+uos.mount(machine.SDCard(), "/sd")
+
+# Open file in SD
+
+f = open(tfile, 'wb')
+```
