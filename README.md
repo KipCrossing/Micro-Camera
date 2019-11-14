@@ -117,3 +117,9 @@ uos.mount(machine.SDCard(), "/sd")
 
 f = open("sd/" + tfile, 'wb')
 ```
+
+## Example Image
+
+This is an example showing the quality of the image (Flash on)
+
+![alt text](images/example.jpg)
