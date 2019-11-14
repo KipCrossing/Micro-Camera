@@ -32,3 +32,5 @@ run('sd/Image'+str(num)+'.jpg')
 numf = open('number.txt', 'w')
 numf.write(str(int(num)+1))
 numf.close()
+
+machine.deepsleep()
